@@ -18,8 +18,8 @@ module.exports = {
             .catch(err=>console.log(err))
     },
     updateToDo: async(req,res)=>{
-        const {text,id} = req.body
-        await ToDoModel.findByIdAndUpdate({_id:id},{text:text})
+        const {text,_id} = req.body
+        await ToDoModel.findByIdAndUpdate({_id:_id},{text:text})
                     .then(result=>res.send(`UPDATED: ${result}`))
                     .catch(err=>console.log(err))
     },
